@@ -1,0 +1,6 @@
+g:htl_all_templates	html-template-literals.txt	/*g:htl_all_templates*
+g:htl_css_templates	html-template-literals.txt	/*g:htl_css_templates*
+g:htl_debug	html-template-literals.txt	/*g:htl_debug*
+html-template-literals	html-template-literals.txt	/*html-template-literals*
+html-template-literals-configuration	html-template-literals.txt	/*html-template-literals-configuration*
+vim-html-template-literals	html-template-literals.txt	/*vim-html-template-literals*

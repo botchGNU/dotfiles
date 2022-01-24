@@ -1,0 +1,102 @@
+Before:
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+
+"                (IT SHOULD CORRECTLY INDENT...)
+Given javascript (NEXT LINE OF OPENING HTML);
+{
+html`
+${
+html`${
+2 + 2}`}
+<div>
+</div>
+`;
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+    ${
+      html`${
+        2 + 2}`}
+    <div>
+    </div>
+  `;
+}
+
+Given javascript (NEXT LINE OF SELF-CLOSING HTML);
+{
+html`
+<div>
+${x}
+<a></a>
+</div>
+`
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+    <div>
+      ${x}
+      <a></a>
+    </div>
+  `
+}
+
+Given javascript (NEXT LINE OF CLOSING HTML);
+{
+html`
+<div>
+<span>
+${x}
+</span></div>
+`
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+    <div>
+      <span>
+        ${x}
+      </span></div>
+  `
+}
+
+
+Given javascript (NEXT LINE OF HTML AFTER EXPRESSION TERMINATOR AT EOL);
+{
+html`
+<div>
+${
+1 + 2}
+<div></div>
+</div>`
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+    <div>
+      ${
+        1 + 2}
+      <div></div>
+    </div>`
+}
+
+

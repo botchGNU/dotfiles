@@ -1,0 +1,158 @@
+Before:
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+
+"                (IT SHOULD CORRECTLY INDENT...)
+Given javascript (LITERAL WITH SINGLE NEWLINE);
+{
+html`
+`;
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+  `;
+}
+
+Given javascript (LITERAL WITH SINGLE HTML TAG);
+{
+html`
+<div></div>
+`;
+}
+
+Do:
+  =G
+
+Expect javascript;
+{
+  html`
+    <div></div>
+  `;
+}
+
+
+Given javascript (LITERAL WITH SINGLE SELF CLOSING TAG):
+  {
+  html`
+  <img />
+  `;
+  }
+
+Do:
+  =G
+
+Expect javascript:
+  {
+    html`
+      <img />
+    `;
+  }
+
+
+" @ignore-ts-test-for-plugin=none (native typescript plugin doesn't work correctly)
+Given javascript (LITERAL TERMINATOR AT EOL, NO SEMICOLON):
+  {
+  html`
+  <div>
+  </div>`
+  more()
+  }
+
+Do:
+  =G
+
+Expect javascript:
+  {
+    html`
+      <div>
+      </div>`
+    more()
+  }
+" @end-ignore-ts
+
+" @ignore-ts-test-for-plugin=none (native typescript plugin doesn't work correctly)
+Given javascript (LITERAL TERMINATOR AT EOL, WITH SEMICOLON):
+  {
+  html`
+  <div>
+  </div>`;
+  more()
+  }
+
+Do:
+  =G
+
+Expect javascript:
+  {
+    html`
+      <div>
+      </div>`;
+    more()
+  }
+" @end-ignore-ts
+
+" @ignore-ts-test-for-plugin=none (native typescript plugin doesn't work correctly)
+Given javascript (LITERAL TERMINATOR AT END OF ONLY LINE):
+  {
+  html`
+  <div></div>`
+  more()
+  }
+
+Do:
+  =G
+
+Expect javascript:
+  {
+    html`
+      <div></div>`
+    more()
+  }
+" @end-ignore-ts
+
+" @ignore-ts-test-for-plugin=none (native typescript plugin doesn't work correctly)
+Given javascript (NEXT LINE AFTER LITERAL):
+  {
+  html`
+  ${
+  html`
+  <div></div>` } `;
+  more()
+  }
+
+Do:
+  =G
+
+Expect javascript:
+  {
+    html`
+      ${
+        html`
+          <div></div>` } `;
+    more()
+  }
+" @end-ignore-ts
+
+After:
+# Given javascript (IGNORED: LITERAL AFTER SELF-CLOSING TAG)
+# {
+# html`
+# <div/>
+# `;
+# }
+#
+# Do:
+#   =G
+#
+# Expect javascript;
+# {
+#   html`
+#     <div/>
+#   `;
+# }

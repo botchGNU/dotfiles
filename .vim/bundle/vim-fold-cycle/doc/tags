@@ -1,0 +1,6 @@
+fold-cycle	fold-cycle.txt	/*fold-cycle*
+fold-cycle-configuration	fold-cycle.txt	/*fold-cycle-configuration*
+fold-cycle-description	fold-cycle.txt	/*fold-cycle-description*
+fold-cycle-usage	fold-cycle.txt	/*fold-cycle-usage*
+fold-cycle.txt	fold-cycle.txt	/*fold-cycle.txt*
+g:fold_cycle_default_mapping	fold-cycle.txt	/*g:fold_cycle_default_mapping*

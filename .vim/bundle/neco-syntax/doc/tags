@@ -1,0 +1,11 @@
+g:necosyntax#max_syntax_lines	necosyntax.txt	/*g:necosyntax#max_syntax_lines*
+g:necosyntax#min_keyword_length	necosyntax.txt	/*g:necosyntax#min_keyword_length*
+neco-syntax	necosyntax.txt	/*neco-syntax*
+necosyntax-commands	necosyntax.txt	/*necosyntax-commands*
+necosyntax-contents	necosyntax.txt	/*necosyntax-contents*
+necosyntax-faq	necosyntax.txt	/*necosyntax-faq*
+necosyntax-install	necosyntax.txt	/*necosyntax-install*
+necosyntax-interface	necosyntax.txt	/*necosyntax-interface*
+necosyntax-introduction	necosyntax.txt	/*necosyntax-introduction*
+necosyntax-variables	necosyntax.txt	/*necosyntax-variables*
+necosyntax.txt	necosyntax.txt	/*necosyntax.txt*

@@ -1,0 +1,25 @@
+set nocompatible
+
+let s:directory = '~/git/vim-html-template-literals'
+
+if (empty(glob(s:directory)))
+  echo '"' . s:directory . '" does not exist'
+  :cquit
+endif
+
+call plug#begin('~/.vim/plugged')
+    Plug 'junegunn/vader.vim'
+    exec "Plug 'jonsmithers/vim-html-template-literals', { 'dir': '" . s:directory . "' }"
+    if !empty($SYNTAX_PLUGIN) && 'none' !=# $SYNTAX_PLUGIN
+      exec "Plug '".$SYNTAX_PLUGIN."'"
+    endif
+call plug#end()
+syntax enable
+let g:htl_debug = 1
+let g:html_indent_style1 = 'inc'
+
+nmap <F10> :echo map(synstack(line("."), col(".")), "synIDattr(v:val, 'name')")<cr>
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
